@@ -1,0 +1,228 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+
+    font-family: 'Raleway', sans-serif;
+    font-size: .875rem;
+
+    background: url(images/bg-mobile.png) no-repeat bottom;
+    background-size: cover;
+
+    text-align: center;
+    color: white;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  main {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .top-box {
+    background-color: hsl(228, 56%, 26%);
+
+    padding: 2.6rem 10rem 0 3rem;
+    border-radius: .8rem;
+    border-top-right-radius: 5rem;
+  }
+
+  .icons {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 2rem;
+    padding-bottom: 3rem;
+  }
+
+  .icons img {
+    background-color: hsl(229, 57%, 11%);
+    border-radius: 10px;
+    padding: .8rem;
+    margin-right: 1rem;
+  }
+
+  .icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .bottom-box {
+    background-color: hsl(228, 56%, 26%);
+    margin-top: 1rem;
+    border-radius: .8rem;
+    
+    position: relative;
+  }
+
+  .used {
+    font-weight: 400;
+    color: hsl(243, 100%, 93%);
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+  }
+
+  span {
+    font-weight: 700;
+    color: white;
+  }
+
+  .bar {
+    background-color: hsl(229, 57%, 11%);
+    width: 80%;
+    padding: .2rem;
+    margin-left: 2rem;
+    margin-bottom: .6rem;
+    border-radius: 20px;
+  }
+
+  .bar .bar-linear {
+    background-image: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    width: 75%;
+    padding: .15rem;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .bar .bar-linear .white-circle {
+    height: 10px;
+    background-color: white;
+    width: 10px;
+    border-radius: 10px;
+  }
+
+  .gb {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2.2rem 3rem;
+  }
+
+  .white-box {
+    background-color: white;
+    border-radius: .6rem;
+
+    position: absolute;
+    left: 20%;
+    top: 78%;
+
+    display: flex;
+    padding: .4rem 1.6rem;
+  }
+
+  .white-box p {
+    color: black;
+    font-size: 2.2rem;
+    font-weight: 700;
+  }
+
+  .left {
+    color: gray;
+    font-size: .8rem;
+
+    text-transform: uppercase;
+  }
+
+  .remain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  @media (min-width: 1000px) {
+    body {
+        background: url(images/bg-desktop.png) bottom right no-repeat;
+        background-color: hsl(229, 57%, 11%);
+        background-size: 94vw;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .top-box {
+      margin-bottom: 2rem;
+    }
+
+    .bottom-box {
+        width: 56em;
+        text-align: left;
+    }
+
+    .used {
+     margin: .5rem 0 .5rem 2.2rem
+    }
+
+    .bar {
+      width: 88%;
+    }
+
+    .white-box {
+      left: 62%;
+      top: -30%;
+    }
+
+    .white-box::after {
+      content: "";
+      position: absolute;
+      border-top: 30px solid white;
+      border-left: 35px solid transparent;
+      bottom: -1.3rem;
+      right: 0;
+  }
+  }
